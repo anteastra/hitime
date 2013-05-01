@@ -3,35 +3,29 @@
     <target name="init">
         <property name="server_dir" value="test dir"/> 
         <property name="build_path" value="./tmp_build"/>
+        <property name="meta_path" value="./meta"/>
         <property name="app_assets_path" value="./app_assets"/>
         <property name="src_path" value="./src"/>
         <property name="dist_path" value="./tmp_dist"/>
         <property name="context_name" value="hitime"/>
         <loadproperties srcFile="deploy.properties"/>
     </target>
-    
-    <target name="printmsg" depends="init">
-        <echo message="build test"/>
-        <echo message="server_dir = ${server_dir}"/>
-        <echo message="os.name = ${os.name}"/>
-        <echo message="java.home = ${java.home}"/>
-        <echo message="from basedir = ${basedir}"/>
-        <echo message="hitimeserverdir = ${hitimeserverdir}"/>
-    </target>
-    
-    <target name="build" depends="init,printmsg">
+        
+    <target name="build" depends="init">
         <delete dir="${build_path}"/>
         <mkdir dir="${build_path}"/>
         
         <delete dir="${dist_path}"/>
         <mkdir dir="${dist_path}"/>
         
-        <war destfile="${dist_path}/${context_name}.war" needxmlfile='false'>
+        <war destfile="${dist_path}/${context_name}.war" webxml="${meta_path}/web.xml">
+            <classes dir="bin"/>
             <fileset dir="${app_assets_path}"/>
         </war>
         
         <echo message="${hitimeserverdir}/webapps/${context_name}.war"/>
         <delete file="${hitimeserverdir}/webapps/${context_name}.war"/>
+        <delete dir="${hitimeserverdir}/webapps/${context_name}"/>
         
         <copy file="${dist_path}/${context_name}.war" 
             tofile="${hitimeserverdir}/webapps/${context_name}.war"/>
