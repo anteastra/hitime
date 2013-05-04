@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class AddTask extends HttpServlet{
+public class AddTask extends HttpServlet{	
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException{
 		

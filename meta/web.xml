@@ -1,4 +1,23 @@
 <web-app>
+    
+    <servlet>
+        <servlet-name>projects_controller</servlet-name>
+        <servlet-class>com.hitime.controller.Projects</servlet-class>
+    </servlet>
+   	<servlet-mapping>
+        <servlet-name>projects_controller</servlet-name>
+        <url-pattern>/projects</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>projects_view</servlet-name>
+        <servlet-class>com.hitime.view.Projects</servlet-class>
+    </servlet>
+   	<servlet-mapping>
+        <servlet-name>projects_view</servlet-name>
+        <url-pattern>/projects_view</url-pattern>
+    </servlet-mapping>
+   	
+   	
     <servlet>
         <servlet-name>ShowTasks</servlet-name>
         <servlet-class>com.hitime.servlets.ShowTasks</servlet-class>
