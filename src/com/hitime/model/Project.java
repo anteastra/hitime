@@ -6,6 +6,7 @@ import java.util.List;
 public class Project {
 	
 	public int id = 0;
+	public boolean isSelected = false;
 	public String name = "";
 	public String description = "";
 
@@ -22,6 +23,7 @@ public class Project {
 		res = new Project();
 		res.id = 2;
 		res.name = "second";
+		res.isSelected = true;
 		res.description = "second project";
 		result.add(res);
 		
@@ -54,6 +56,7 @@ public class Project {
 		res = new Task();
 		res.id = 3;
 		res.name = "third task";
+		res.isSelected = true;
 		res.description = "third task description";
 		result.add(res);		
 		

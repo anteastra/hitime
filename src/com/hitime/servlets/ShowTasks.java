@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,8 +15,16 @@ import com.hitime.model.Task;
 public class ShowTasks extends HttpServlet{
 	
 		
-	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException{
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{
 				
+		List<Project> projects = Project.getProjects();
+		List<Task> tasks = projects.get(0).getTasks();
+		
+		req.setAttribute("projects", projects);
+		req.setAttribute("tasks", tasks);
+		
+		req.getRequestDispatcher("jsp/showtasks.jsp").forward(req, res);
+		/*
 		res.setContentType("text/html");
 		PrintWriter out = res.getWriter();
 		
@@ -30,7 +39,7 @@ public class ShowTasks extends HttpServlet{
 		out.println("</body>");
 		
 		out.println("</html>");
-		out.close();
+		out.close();*/
 	}
 
 	private void printHeader(PrintWriter out) {
