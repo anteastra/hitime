@@ -62,4 +62,8 @@
         <servlet-name>AddProjectShow</servlet-name>
         <url-pattern>/AddProjectShow</url-pattern>
     </servlet-mapping>
+    
+    <welcome-file-list>
+		<welcome-file>hitime/main.html</welcome-file> 
+	</welcome-file-list>
 </web-app>
