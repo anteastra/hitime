@@ -63,7 +63,27 @@
         <url-pattern>/AddProjectShow</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>Authenticate</servlet-name>
+        <servlet-class>com.hitime.controller.Authenticate</servlet-class>
+    </servlet>
+   	<servlet-mapping>
+        <servlet-name>Authenticate</servlet-name>
+        <url-pattern>/authenticate</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
-		<welcome-file>hitime/main.html</welcome-file> 
+		<welcome-file>/main.jsp</welcome-file> 
 	</welcome-file-list>
+	
+	<filter>
+		<filter-name>securityChain</filter-name>
+		<filter-class>com.hitime.filters.Security</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>securityChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 </web-app>

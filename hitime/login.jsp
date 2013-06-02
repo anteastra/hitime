@@ -11,7 +11,7 @@
 
 	<div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" method="post" action="/authenticate">
         <h2 class="form-signin-heading">Please enter</h2>
         <input type="text" class="input-block-level" placeholder="Login">
         <input type="password" class="input-block-level" placeholder="Password">
