@@ -1,36 +1,22 @@
 <project name="hitime" default="build" basedir=".">
     
-    <target name="init">
-        <property name="server_dir" value="test dir"/> 
-        <property name="build_path" value="./tmp_build"/>
-        <property name="meta_path" value="./meta"/>
-        <property name="app_assets_path" value="./app_assets"/>
-        <property name="src_path" value="./src"/>
-        <property name="dist_path" value="./tmp_dist"/>
-        <property name="context_name" value="hitime"/>
-        <loadproperties srcFile="deploy.properties"/>
+    <target name="init">        
+        <property name="build_path" value="./hitime_build"/>
+        <property name="meta_path" value="./WEB-INF"/>
+        <property name="app_files" value="./hitime"/>
+        <property name="src_path" value="./src"/>        
+        <property name="webapp_name" value="hitime"/>        
     </target>
         
     <target name="build" depends="init">
         <delete dir="${build_path}"/>
-        <mkdir dir="${build_path}"/>
+        <mkdir dir="${build_path}"/>             
         
-        <delete dir="${dist_path}"/>
-        <mkdir dir="${dist_path}"/>
-        
-        <war destfile="${dist_path}/${context_name}.war" webxml="${meta_path}/web.xml">
+        <war destfile="${build_path}/${webapp_name}.war" webxml="${meta_path}/web.xml">
             <classes dir="bin"/>
-            <fileset dir="${app_assets_path}"/>
+            <fileset dir="${app_files}"/>
         </war>
-        
-        <echo message="${hitimeserverdir}/webapps/${context_name}.war"/>
-        <delete file="${hitimeserverdir}/webapps/${context_name}.war"/>
-        <delete dir="${hitimeserverdir}/webapps/${context_name}"/>
-        
-        <copy file="${dist_path}/${context_name}.war" 
-            tofile="${hitimeserverdir}/webapps/${context_name}.war"/>
-        <delete dir="${build_path}"/>
-        
+                       
     </target>
     
 </project>

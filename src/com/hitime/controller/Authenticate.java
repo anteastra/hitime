@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Authenticate extends HttpServlet{
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{		
-		req.getSession().setAttribute("isAuthorized", true);
+		req.getSession().setAttribute("authenticated", true);
 		res.sendRedirect("/");
 	}
 }

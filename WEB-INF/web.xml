@@ -8,68 +8,14 @@
         <servlet-name>projects_controller</servlet-name>
         <url-pattern>/projects</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>projects_view</servlet-name>
-        <servlet-class>com.hitime.view.Projects</servlet-class>
-    </servlet>
-   	<servlet-mapping>
-        <servlet-name>projects_view</servlet-name>
-        <url-pattern>/projects_view</url-pattern>
-    </servlet-mapping>
-   	
-   	
-    <servlet>
-        <servlet-name>ShowTasks</servlet-name>
-        <servlet-class>com.hitime.servlets.ShowTasks</servlet-class>
-    </servlet>
-   	<servlet-mapping>
-        <servlet-name>ShowTasks</servlet-name>
-        <url-pattern>/ShowTasks</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>AddTask</servlet-name>
-        <servlet-class>com.hitime.servlets.AddTask</servlet-class>
-    </servlet>
-   	<servlet-mapping>
-        <servlet-name>AddTask</servlet-name>
-        <url-pattern>/AddTask</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>AddTaskShow</servlet-name>
-        <servlet-class>com.hitime.servlets.AddTaskShow</servlet-class>
-    </servlet>
-   	<servlet-mapping>
-        <servlet-name>AddTaskShow</servlet-name>
-        <url-pattern>/AddTaskShow</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>AddProject</servlet-name>
-        <servlet-class>com.hitime.servlets.AddProject</servlet-class>
-    </servlet>
-   	<servlet-mapping>
-        <servlet-name>AddProject</servlet-name>
-        <url-pattern>/AddProject</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>AddProjectShow</servlet-name>
-        <servlet-class>com.hitime.servlets.AddProjectShow</servlet-class>
-    </servlet>
-   	<servlet-mapping>
-        <servlet-name>AddProjectShow</servlet-name>
-        <url-pattern>/AddProjectShow</url-pattern>
-    </servlet-mapping>
-    
+  
     <servlet>
         <servlet-name>Authenticate</servlet-name>
         <servlet-class>com.hitime.controller.Authenticate</servlet-class>
     </servlet>
    	<servlet-mapping>
         <servlet-name>Authenticate</servlet-name>
-        <url-pattern>/authenticate</url-pattern>
+        <url-pattern>/authenticate.do</url-pattern>
     </servlet-mapping>
     
     <welcome-file-list>

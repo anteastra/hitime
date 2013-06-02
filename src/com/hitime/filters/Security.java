@@ -22,11 +22,11 @@ public class Security implements Filter{
 		
 		HttpServletRequest req = (HttpServletRequest)request;
 		HttpSession sess = req.getSession();
-		Boolean auth = (Boolean) sess.getAttribute("isAuthorized");
+		Boolean auth = (Boolean) sess.getAttribute("authenticated");
 		if (auth == null || (!auth.equals(true))){
 			StringBuffer buf = req.getRequestURL();
 			String reqStr = buf.toString();
-			if (!(reqStr.endsWith(".css")||reqStr.endsWith(".ico")||reqStr.endsWith(".js")||reqStr.endsWith("/authenticate"))){
+			if (!(reqStr.endsWith(".css")||reqStr.endsWith(".ico")||reqStr.endsWith(".js")||reqStr.endsWith("/authenticate.do"))){
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}else {
 				chain.doFilter(request, response);
